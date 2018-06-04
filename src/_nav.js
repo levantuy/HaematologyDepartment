@@ -161,6 +161,11 @@ export default {
       icon: 'icon-pie-chart',
     },
     {
+      name: 'Test',
+      url: '/test',
+      icon: 'icon-pie-chart',
+    },
+    {
       name: 'Icons',
       url: '/icons',
       icon: 'icon-star',

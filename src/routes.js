@@ -177,6 +177,11 @@ const Patient = Loadable({
   loading: Loading,
 });
 
+const Test = Loadable({
+  loader: () => import('./views/Test'),
+  loading: Loading,
+});
+
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -220,6 +225,7 @@ const routes = [
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/Patient', name: 'Patient', component: Patient },
+  { path: '/Test', name: 'Test', component: Test },
 ];
 
 export default routes;

@@ -27,7 +27,7 @@ import PatientReport from '../Patient/Patient'
 require("jquery/dist/jquery");
 
 
-class Dashboard extends Component {
+class Test extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,9 +68,9 @@ class Dashboard extends Component {
               <CardBody>
                 
                 <Modal isOpen={this.state.large} toggle={this.toggleLarge}
-                       className={'modal-lg modal-customer'}>
+                       className={'modal-lg'}>
                   <ModalHeader toggle={this.toggleLarge}>Báo cáo bệnh nhân</ModalHeader>
-                  <ModalBody className="modal-customer">
+                  <ModalBody>
                     <PatientReport></PatientReport>
                   </ModalBody>
                   <ModalFooter>
@@ -88,4 +88,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default Test;
