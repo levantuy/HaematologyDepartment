@@ -182,6 +182,11 @@ const Test = Loadable({
   loading: Loading,
 });
 
+const UserGroup = Loadable({
+  loader: () => import('./views/System/UserGroup'),
+  loading: Loading,
+});
+
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -226,6 +231,7 @@ const routes = [
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/Patient', name: 'Patient', component: Patient },
   { path: '/Test', name: 'Test', component: Test },
+  { path: '/system/user-group', name: 'User Group', component: UserGroup },
 ];
 
 export default routes;

@@ -9951,5 +9951,8 @@ body {
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem; }
 
+.no-padding {
+  padding: 0px; }
+
 html body .app.flex-row.align-items-center {
   height: 100vh; }

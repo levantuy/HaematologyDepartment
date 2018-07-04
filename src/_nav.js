@@ -237,7 +237,7 @@ export default {
     {
       title: true,
       name: 'Extras',
-    },
+    },    
     {
       name: 'Pages',
       url: '/pages',
@@ -259,11 +259,23 @@ export default {
           icon: 'icon-star',
         },
         {
-          name: 'Error 500',
+          name: 'Error 5000',
           url: '/500',
           icon: 'icon-star',
         },
       ],
-    },    
+    }, 
+    {
+      name: 'Người dùng',
+      url: '/system',
+      icon: 'icon-pie-chart',
+      children: [
+        {
+          name: 'Nhóm',
+          url: '/system/user-group',
+          icon: 'icon-star',
+        },
+      ],
+    },   
   ],
 };
