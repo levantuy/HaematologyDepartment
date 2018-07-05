@@ -15,8 +15,11 @@ import Switches from './Switches';
 import Tables from './Tables';
 import Tabs from './Tabs';
 import Tooltips from './Tooltips';
+import GridPager from './GridPager';
+import SearchBox from './SearchBox';
 
 export {
-  Breadcrumbs, Cards, Carousels, Collapses, Dropdowns, Forms, Jumbotrons, ListGroups, Navbars, Navs, Popovers, ProgressBar, Switches, Tables, Tabs, Tooltips, Paginations
+  Breadcrumbs, Cards, Carousels, Collapses, Dropdowns, Forms, Jumbotrons, ListGroups, Navbars, Navs, Popovers, ProgressBar, Switches, 
+  Tables, Tabs, Tooltips, Paginations, GridPager, SearchBox
 };
 

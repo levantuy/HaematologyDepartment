@@ -15,7 +15,7 @@ import {
   Switches,
   Tables,
   Tabs,
-  Tooltips,
+  Tooltips, GridPager, SearchBox
 } from './Base';
 
 import { ButtonDropdowns, ButtonGroups, Buttons, BrandButtons } from './Buttons';
@@ -70,6 +70,6 @@ export {
   Paginations,
   Patient,
   Test,
-  UserGroup,
+  UserGroup, GridPager, SearchBox
 };
 
