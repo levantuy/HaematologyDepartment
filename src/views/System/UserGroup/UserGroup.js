@@ -29,7 +29,7 @@ class UserGroup extends React.Component {
         this.state = {
             Data: {
                 List: [],
-                totalPage: 0,
+                totalItem: 0,
                 sortColumnName: '',
                 sortOrder: '',
                 currentPage: 1,
@@ -120,6 +120,7 @@ class UserGroup extends React.Component {
     selectionChange = (selectedOption) => {
         this.setState({ selectedOption });
         var d = this.state.Data;
+        d.currentPage = 1;
         d.pageSize = selectedOption.value;
         this.setState({
             Data: d
@@ -180,7 +181,7 @@ class UserGroup extends React.Component {
                                         <tbody>{rows}</tbody>
                                     </Table>
                                 </Row>
-                                <GridPager Size={this.state.Data.totalPage} onPageChanged={this.pageChanged} currentPage={this.state.Data.currentPage} />
+                                <GridPager Size={this.state.Data.totalItem} pageSize = {this.state.Data.pageSize} onPageChanged={this.pageChanged} currentPage={this.state.Data.currentPage} />
                             </CardBody>
                         </Card>
                     </Col>
