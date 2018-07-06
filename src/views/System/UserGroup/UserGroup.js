@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Input, Card, CardBody, CardHeader, Col, Row, Table } from 'reactstrap';
 import Select from 'react-select';
 import {GridPager, SearchBox} from '../../Base';
+// import config from 'react-global-configuration';
+import {getToken} from '../../../helpers';
 
 class EmployeeGridRow extends React.Component {
     constructor(props) {
@@ -28,8 +30,8 @@ class UserGroup extends React.Component {
             Data: {
                 List: [],
                 totalPage: 0,
-                sortColumnName: null,
-                sortOrder: null,
+                sortColumnName: '',
+                sortOrder: '',
                 currentPage: 1,
                 pageSize: 3,
                 searchText: ''
@@ -60,8 +62,9 @@ class UserGroup extends React.Component {
             params.sortOrder = this.state.Data.sortOrder;
         }
 
+        getToken();
         // Optionally the request above could also be done as
-        axios.get('http://localhost:63260/api/UserApi/GetAll', {
+        axios.get(localStorage.getItem('urlApi') + 'UserApi/GetAll', {
             params: {
                 pageSize: params.pageSize,
                 currentPage: params.currentPage,
@@ -70,7 +73,7 @@ class UserGroup extends React.Component {
                 searchText: params.searchText
             },
             headers: {
-                "Authorization" : 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Int1c2VybmFtZX0iLCJuYmYiOjE1MzA3ODEyMjUsImV4cCI6MTUzMDc4MjQyNSwiaWF0IjoxNTMwNzgxMjI1fQ.cSMCLRu3qrScbkskOa7AeDuRLSqUar1h1xflIgb5vK4'
+                "Authorization" : 'Bearer ' + localStorage.getItem('token')
             }
         })
             .then((response) => {
@@ -81,7 +84,7 @@ class UserGroup extends React.Component {
             })
             .then(function () {
                 // always executed
-            });
+            });            
     }
 
     // @* function for pagination *@
@@ -156,7 +159,7 @@ class UserGroup extends React.Component {
                                         />
                                     </Col>
                                     <Col xs="12" lg="6" className="no-padding">
-                                        <SearchBox onSearchChanged={this.searchChange} searchText={this.state.Data.searchText} />
+                                        <SearchBox onSearchChanged={this.searchChange} searchText={this.state.Data.searchText == null ? '' : this.state.Data.searchText} />
                                     </Col>
                                 </Row>
                                 <Row>

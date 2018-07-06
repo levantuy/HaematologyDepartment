@@ -177,11 +177,6 @@ const Patient = Loadable({
   loading: Loading,
 });
 
-const Test = Loadable({
-  loader: () => import('./views/Test'),
-  loading: Loading,
-});
-
 const UserGroup = Loadable({
   loader: () => import('./views/System/UserGroup'),
   loading: Loading,
@@ -230,7 +225,6 @@ const routes = [
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/Patient', name: 'Patient', component: Patient },
-  { path: '/Test', name: 'Test', component: Test },
   { path: '/system/user-group', name: 'User Group', component: UserGroup },
 ];
 
