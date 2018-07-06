@@ -6,7 +6,7 @@ import {GridPager, SearchBox} from '../../Base';
 // import config from 'react-global-configuration';
 import {getToken} from '../../../helpers';
 
-class EmployeeGridRow extends React.Component {
+class UserGroupComponent extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -131,7 +131,7 @@ class UserGroup extends React.Component {
     render() {
         var rows = [];
         this.state.Data.List.forEach(function (item) {
-            rows.push(<EmployeeGridRow key={item.GroupId} item={item} />);
+            rows.push(<UserGroupComponent key={item.GroupId} item={item} />);
         });
 
         var options = [
@@ -168,15 +168,11 @@ class UserGroup extends React.Component {
                                             <tr>
                                                 <th onClick={this.sortChanged.bind(this, 'GroupId', this.state.Data.sortOrder)}>Id nhóm
                                     <i className={this._sortClass('GroupId')}></i></th>
-                                                <th onClick={this.sortChanged.bind(this, 'GroupName', this.state.Data.sortOrder)}>
-                                                    Tên nhóm
+                                                <th onClick={this.sortChanged.bind(this, 'GroupName', this.state.Data.sortOrder)}>Tên nhóm
                                     <i className={this._sortClass('GroupName')}></i></th>
-                                                <th onClick={this.sortChanged.bind(this, 'Description', this.state.Data.sortOrder)}>
-                                                    Mô tả nhóm
-                                    <i className={this._sortClass('Description')}></i>
-                                                </th>
-                                                <th onClick={this.sortChanged.bind(this, 'ParentId', this.state.Data.sortOrder)}>
-                                                    Id nhóm cha
+                                                <th onClick={this.sortChanged.bind(this, 'Description', this.state.Data.sortOrder)}>Mô tả nhóm
+                                    <i className={this._sortClass('Description')}></i></th>
+                                                <th onClick={this.sortChanged.bind(this, 'ParentId', this.state.Data.sortOrder)}>Id nhóm cha
                                     <i className={this._sortClass('ParentId')}></i>
                                                 </th>
                                             </tr>
