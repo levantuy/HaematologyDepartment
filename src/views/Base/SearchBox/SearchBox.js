@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import { Input } from 'reactstrap';
+import { DelayInput } from 'react-delay-input';
 
-const WAIT_INTERVAL = 2000000000;
-const ENTER_KEY = 13;
 class SearchBox extends Component {
     constructor(props) {
-        super(props);        
-        this.handleChange = this.handleChange.bind(this);
+        super(props);
+        this.handChange = this.handChange.bind(this);
     }
 
-    componentWillMount() {
-        this.timer = null;
-    }
-
-    handleChange(e) {
-        // console.log('search');
-        clearTimeout(this.timer);
-        this.timer = setTimeout(this.props.onSearchChanged(e.target.value), WAIT_INTERVAL);        
+    handChange(event) {
+        this.setState({ value: this.props.searchText });
+        this.props.onSearchChanged(event.target.value);
     }
 
     render() {
         return (
-            <div><Input type="text" value={this.props.searchText} placeholder="tìm kiếm" onChange={this.handleChange} /></div>
+            <div>
+                <DelayInput className="form-control"
+                    minLength={2}
+                    delayTimeout={800}
+                    placeholder="tìm kiếm"
+                    onChange={this.handChange} />
+            </div>
         )
     }
 };
