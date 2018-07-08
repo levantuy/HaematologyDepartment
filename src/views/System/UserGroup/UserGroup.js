@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Input, Card, CardBody, CardHeader, Col, Row, Table } from 'reactstrap';
+import { Button, Input, Card, CardBody, CardHeader, Col, Row, Table } from 'reactstrap';
 import Select from 'react-select';
 import {GridPager, SearchBox} from '../../Base';
 // import config from 'react-global-configuration';
@@ -151,15 +151,10 @@ class UserGroup extends React.Component {
                             <CardHeader><i className="fa fa-align-justify"></i> Danh sách nhóm người dùng</CardHeader>
                             <CardBody>
                                 <Row>
-                                    <Col xs="12" lg="6" className="no-padding">
-                                        <Select
-                                            name="form-field-name"
-                                            value={this.state.selectedOption}
-                                            options={options}
-                                            onChange={this.selectionChange}
-                                        />
-                                    </Col>
-                                    <Col xs="12" lg="6" className="no-padding">
+                                    <Col xs="12" lg="1" className="no-padding-right">
+                                        <Button block color="primary">Thêm mới</Button>
+                                    </Col>                                   
+                                    <Col xs="12" lg="11" className="no-padding">
                                         <SearchBox onSearchChanged={this.searchChange} searchText={this.state.Data.searchText == null ? '' : this.state.Data.searchText} />
                                     </Col>
                                 </Row>
@@ -181,7 +176,19 @@ class UserGroup extends React.Component {
                                         <tbody>{rows}</tbody>
                                     </Table>
                                 </Row>
-                                <GridPager Size={this.state.Data.totalItem} pageSize = {this.state.Data.pageSize} onPageChanged={this.pageChanged} currentPage={this.state.Data.currentPage} />
+                                <Row>
+                                    <Col xs="12" lg="6" className="no-padding">
+                                        <GridPager Size={this.state.Data.totalItem} pageSize = {this.state.Data.pageSize} onPageChanged={this.pageChanged} currentPage={this.state.Data.currentPage} />
+                                    </Col>
+                                    <Col xs="12" lg="6" className="no-padding">
+                                        <Select
+                                            name="form-field-name"
+                                            value={this.state.selectedOption}
+                                            options={options}
+                                            onChange={this.selectionChange}
+                                        />
+                                    </Col>
+                                </Row>                                
                             </CardBody>
                         </Card>
                     </Col>

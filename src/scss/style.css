@@ -9952,7 +9952,15 @@ body {
   border-top-right-radius: 0.3rem; }
 
 .no-padding {
-  padding: 0px; }
+  padding: 0px; 
+}
 
 html body .app.flex-row.align-items-center {
   height: 100vh; }
+
+.no-padding-right {
+  padding-left: 0px; 
+  padding-bottom: 0px; 
+  padding-top: 0px; 
+  padding-right: 10px;
+}
